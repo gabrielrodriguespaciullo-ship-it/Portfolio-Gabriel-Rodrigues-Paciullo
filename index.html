@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio Gabriel Rodrigues Paciullo</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  /* Mundo de prancha técnica: papel claro, traço escuro, cores das linhas Rosa e Âmbar como acento */
+  --paper:#f4f4f1;
+  --sheet:#ffffff;
+  --ink:#16181d;
+  --muted:#5b616b;
+  --rule:#d6d7d2;
+  --rosa:#c8166f;
+  --ambar:#c27400;
+  --display:"Plex Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+.label{font:500 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Cabeçalho */
+header.top{border-bottom:1px solid var(--ink);background:var(--sheet)}
+.top .wrap{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding-top:56px;padding-bottom:36px}
+.top h1{font-size:clamp(40px,6.4vw,76px);letter-spacing:-.01em}
+.top .role{margin-top:14px;font-size:19px;color:var(--muted);max-width:52ch}
+.top .role strong{color:var(--ink);font-weight:600}
+.lines{display:flex;gap:6px;margin-top:22px}
+.lines span{height:6px;border-radius:3px}
+.lines .r{width:88px;background:var(--rosa)}
+.lines .a{width:44px;background:var(--ambar)}
+.lines .k{width:22px;background:var(--ink)}
+.contact{border:1px solid var(--ink);min-width:300px}
+.contact div{display:grid;grid-template-columns:86px 1fr;border-top:1px solid var(--rule);font-size:14px}
+.contact div:first-child{border-top:0}
+.contact dt,.contact dd{margin:0;padding:9px 12px}
+.contact dt{font:500 10.5px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-right:1px solid var(--rule);padding-top:11px}
+.contact dd a{text-decoration:none;border-bottom:1px solid var(--rule)}
+.contact dd a:hover{border-color:var(--ink)}
+
+/* Faixa de resumo */
+.summary{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;padding:44px 0 40px}
+.summary p{margin:0;font-size:17.5px;max-width:62ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);border-left:1px solid var(--rule)}
+.facts div{padding:12px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.facts b{display:block;font:600 22px/1.1 var(--display)}
+.facts span{font-size:13px;color:var(--muted)}
+
+/* Índice */
+nav.index{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);background:var(--sheet)}
+nav.index ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap}
+nav.index li{flex:1 1 150px;border-right:1px solid var(--rule)}
+nav.index li:last-child{border-right:0}
+nav.index a{display:block;padding:12px 14px;text-decoration:none;font-size:14px;line-height:1.3}
+nav.index a:hover{background:var(--paper)}
+nav.index a .label{display:block;margin-bottom:3px}
+
+/* Projetos como pranchas */
+section.sheet{margin:48px auto;background:var(--sheet);border:1px solid var(--ink);display:grid;grid-template-columns:1fr 270px}
+.sheet .main{padding:32px 34px 34px;min-width:0}
+.sheet aside{border-left:1px solid var(--ink);display:flex;flex-direction:column}
+.sheet aside .no{background:var(--ink);color:#fff;padding:16px 18px}
+.sheet aside .no .label{color:#b9bcc3}
+.sheet aside .no b{display:block;font:700 44px/1 var(--display);margin-top:4px}
+.sheet aside dl{margin:0}
+.sheet aside dl div{padding:11px 18px;border-bottom:1px solid var(--rule)}
+.sheet aside dt{font:500 10.5px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.sheet aside dd{margin:3px 0 0;font-size:14px;line-height:1.45}
+.sheet aside .links{margin-top:auto;padding:16px 18px;border-top:1px solid var(--ink);display:flex;flex-direction:column;gap:8px}
+.btn{display:inline-flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--ink);text-decoration:none;font-weight:500;font-size:14px;background:var(--sheet)}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--rosa);border-color:var(--rosa)}
+.kicker{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.kicker i{width:22px;height:4px;border-radius:2px;background:var(--rosa)}
+.kicker i.amb{background:var(--ambar)}
+.sheet h2{font-size:clamp(30px,3.6vw,42px)}
+.sheet .lead{font-size:17.5px;margin:14px 0 0;max-width:64ch}
+.sheet p{max-width:66ch}
+.hero-img{margin:24px 0 0;border:1px solid var(--rule);cursor:zoom-in}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:24px}
+.stats div{padding:12px 14px 4px 0;border-right:1px solid var(--rule);padding-left:14px}
+.stats div:first-child{padding-left:0}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font:700 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted);line-height:1.35;display:block;margin-top:6px}
+h3.sub{font-size:21px;margin:34px 0 4px}
+.sub + p.note{margin:0 0 14px;color:var(--muted);font-size:14.5px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+figure{margin:0}
+figure button{all:unset;display:block;cursor:zoom-in;border:1px solid var(--rule);background:var(--paper);width:100%;box-sizing:border-box}
+figure button:hover{border-color:var(--ink)}
+figure button:focus-visible{outline:2px solid var(--rosa);outline-offset:2px}
+figure img{width:100%;aspect-ratio:var(--ar,1.414);object-fit:cover;object-position:var(--pos,center)}
+figcaption{display:flex;gap:10px;align-items:baseline;padding:7px 0 0;font-size:13.5px;line-height:1.35}
+figcaption .label{flex:none}
+.levels{margin:18px 0 0;border:1px solid var(--rule);font-size:14px}
+.levels div{display:grid;grid-template-columns:86px 1fr;border-top:1px solid var(--rule)}
+.levels div:first-child{border-top:0}
+.levels b{font:500 13px/1 var(--mono);padding:10px 12px;border-right:1px solid var(--rule);font-variant-numeric:tabular-nums}
+.levels span{padding:9px 12px}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+ul.plain{margin:12px 0 0;padding:0;list-style:none}
+ul.plain li{padding:8px 0;border-top:1px solid var(--rule);font-size:15px}
+ul.plain li:first-child{border-top:0}
+.team{font-size:13.5px;color:var(--muted);margin-top:14px}
+
+/* Projetos menores */
+.minor{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--ink);background:var(--sheet);margin:48px auto}
+.minor article{padding:26px 28px;border-right:1px solid var(--rule)}
+.minor article:last-child{border-right:0}
+.minor h3{font-size:25px;margin:6px 0 10px}
+.minor p{margin:0 0 10px;font-size:15.5px}
+.minor .meta{font-size:13.5px;color:var(--muted)}
+
+/* Competências */
+section.skills{margin:48px auto;border-top:1px solid var(--ink)}
+.skills h2{font-size:34px;margin:28px 0 18px}
+.skillgrid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--rule);border-top:1px solid var(--rule)}
+.skillgrid div{padding:16px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--sheet)}
+.skillgrid h3{font-size:19px;margin:0 0 6px}
+.skillgrid p{margin:0;font-size:14.5px;color:var(--muted)}
+.skillgrid .lvl{font:500 11px/1 var(--mono);color:var(--rosa);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:8px}
+
+footer{background:var(--ink);color:#e9eaec;margin-top:56px}
+footer .wrap{padding-top:36px;padding-bottom:40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:end}
+footer h2{font-size:30px;color:#fff}
+footer p{margin:6px 0 0;color:#b9bcc3;font-size:14.5px}
+footer .c{font:15px/1.8 var(--body)}
+footer .c a{color:#fff}
+
+/* Visualizador de imagem */
+dialog.viewer{border:0;padding:0;max-width:96vw;max-height:94vh;background:#0e0f12;color:#fff}
+dialog.viewer::backdrop{background:rgba(14,15,18,.86)}
+dialog.viewer img{max-width:96vw;max-height:calc(94vh - 48px);object-fit:contain;margin:0 auto;background:#fff}
+dialog.viewer .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 14px;font-size:14px}
+dialog.viewer button{background:transparent;color:#fff;border:1px solid #fff;padding:6px 12px;font:500 13px var(--body);cursor:pointer}
+
+@media (max-width:900px){
+  .top .wrap{grid-template-columns:1fr}
+  .contact{min-width:0}
+  .summary{grid-template-columns:1fr;gap:28px}
+  section.sheet{grid-template-columns:1fr}
+  .sheet aside{border-left:0;border-top:1px solid var(--ink)}
+  .sheet aside .links{margin-top:0}
+  .two{grid-template-columns:1fr}
+  .minor{grid-template-columns:1fr}
+  .minor article{border-right:0;border-bottom:1px solid var(--rule)}
+  .skillgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .sheet .main{padding:22px 18px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats div:nth-child(2){border-right:0}
+  .stats div:nth-child(3){padding-left:0}
+  .g2,.g3{grid-template-columns:1fr}
+  .skillgrid{grid-template-columns:1fr}
+  nav.index li{flex-basis:50%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <div class="label">Portfólio · Transporte Terrestre · 2026</div>
+      <h1 style="margin-top:10px">Gabriel Rodrigues Paciullo</h1>
+      <p class="role"><strong>Estudante de Tecnologia em Transporte Terrestre</strong> na Fatec Tatuapé – Victor Civita. Projeto de estações, análise urbana em QGIS e ferramentas próprias de Pesquisa Operacional.</p>
+      <div class="lines" aria-hidden="true"><span class="r"></span><span class="a"></span><span class="k"></span></div>
+    </div>
+    <dl class="contact">
+      <div><dt>E-mail</dt><dd><a href="mailto:gabrielrodriguespaciullo@gmail.com">gabrielrodriguespaciullo@gmail.com</a></dd></div>
+      <div><dt>Telefone</dt><dd>+55 (11) 95540-7562</dd></div>
+      <div><dt>Cidade</dt><dd>São Paulo, SP</dd></div>
+      <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/gabriel-rodrigues-paciullo-462664302">gabriel-rodrigues-paciullo</a></dd></div>
+      <div><dt>GitHub</dt><dd><a href="https://github.com/gabrielrodriguespaciullo-ship-it">gabrielrodriguespaciullo-ship-it</a></dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="summary">
+    <p>Trabalho na interseção entre <strong>planejamento de transporte</strong>, <strong>geoprocessamento</strong> e <strong>representação técnica</strong>. Desenvolvo projetos do levantamento de dados à prancha final: mapas temáticos no QGIS a partir do GeoSampa, plantas e cortes em AutoCAD, modelos 3D navegáveis e sites que tornam os dados fáceis de ler. Atualmente conduzo uma iniciação científica sobre poluição sonora na Subprefeitura da Penha.</p>
+    <div class="facts">
+      <div><b>12 pranchas</b><span>projeto executivo preliminar da Estação Cursino</span></div>
+      <div><b>20 mapas</b><span>temáticos no QGIS (SIRGAS 2000 / UTM 23S)</span></div>
+      <div><b>11 pontos</b><span>de medição de ruído na iniciação científica</span></div>
+      <div><b>4 sites</b><span>publicados com projetos e ferramentas próprias</span></div>
+    </div>
+  </div>
+</div>
+
+<nav class="index" aria-label="Projetos">
+  <div class="wrap">
+    <ol>
+      <li><a href="#cursino"><span class="label">01</span>Estação Cursino</a></li>
+      <li><a href="#levantamento"><span class="label">02</span>Análise urbana em QGIS</a></li>
+      <li><a href="#decibel"><span class="label">03</span>Iniciação científica</a></li>
+      <li><a href="#po"><span class="label">04</span>Ferramentas de PO</a></li>
+      <li><a href="#outros"><span class="label">05</span>Outros trabalhos</a></li>
+      <li><a href="#competencias"><span class="label">06</span>Competências</a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- 01 CURSINO -->
+<div class="wrap">
+<section class="sheet" id="cursino">
+  <div class="main">
+    <div class="kicker"><i></i><i class="amb"></i><span class="label">Projeto de estação · AutoCAD + 3D</span></div>
+    <h2>Estação Cursino: integração Linha 20-Rosa × Linha Âmbar</h2>
+    <p class="lead">Estudo preliminar de uma estação de metrô com duas linhas sobrepostas, terminal de ônibus e praça pública na Av. do Cursino. O projeto vai da implantação ao detalhe de circulação vertical, com rota acessível e quadro de distâncias de percurso.</p>
+    <figure style="margin-top:22px">
+      <button type="button" data-full="img/cursino3d.jpg" data-cap="Modelo 3D navegável: implantação com Acesso A, passarela, Acesso B e terminal de ônibus"><img src="img/cursino3d.jpg" alt="Vista aérea do modelo 3D da Estação Cursino com praça, terminal de ônibus e acessos" style="--ar:16/9"></button>
+      <figcaption><span class="label">3D</span>Modelo navegável publicado na web: é possível orbitar, caminhar pela estação e usar escadas e elevadores.</figcaption>
+    </figure>
+    <div class="stats">
+      <div><b>5 níveis</b><span>de +7,00 a −33,00 m</span></div>
+      <div><b>16 + 7</b><span>escadas rolantes e elevadores</span></div>
+      <div><b>16.008 m²</b><span>de área construída subterrânea</span></div>
+      <div><b>12.368 m²</b><span>de praça pública na superfície</span></div>
+    </div>
+
+    <h3 class="sub">Pranchas técnicas</h3>
+    <p class="note">Formato A1, escalas de 1:1000 a 1:50. Toque para ampliar.</p>
+    <div class="grid g2">
+      <figure><button type="button" data-full="img/prancha01.jpg" data-cap="Prancha 01/12 · Implantação e situação · 1:1000 e 1:6000"><img src="img/prancha01.jpg" alt="Prancha 01: implantação da estação no quarteirão com traçado das linhas" loading="lazy"></button><figcaption><span class="label">01/12</span>Implantação e situação</figcaption></figure>
+      <figure><button type="button" data-full="img/prancha03.jpg" data-cap="Prancha 03/12 · Planta do mezanino, nível −9,00 · 1:400"><img src="img/prancha03.jpg" alt="Prancha 03: planta do mezanino com áreas paga e não paga" loading="lazy"></button><figcaption><span class="label">03/12</span>Mezanino, nível −9,00</figcaption></figure>
+      <figure><button type="button" data-full="img/prancha04.jpg" data-cap="Prancha 04/12 · Plataformas Linha 20-Rosa e Linha Âmbar · 1:250"><img src="img/prancha04.jpg" alt="Prancha 04: plantas das plataformas das duas linhas" loading="lazy"></button><figcaption><span class="label">04/12</span>Plataformas L20 e Âmbar</figcaption></figure>
+      <figure><button type="button" data-full="img/prancha05.jpg" data-cap="Prancha 05/12 · Cortes AA e BB · 1:300 e 1:400"><img src="img/prancha05.jpg" alt="Prancha 05: cortes longitudinal e transversal da estação" loading="lazy"></button><figcaption><span class="label">05/12</span>Cortes AA e BB</figcaption></figure>
+      <figure><button type="button" data-full="img/prancha06.jpg" data-cap="Prancha 06/12 · Implantação cotada e quadro de áreas · 1:1000"><img src="img/prancha06.jpg" alt="Prancha 06: implantação cotada com quadro de áreas" loading="lazy"></button><figcaption><span class="label">06/12</span>Implantação cotada e quadro de áreas</figcaption></figure>
+      <figure><button type="button" data-full="img/prancha12.jpg" data-cap="Prancha 12/12 · Rota acessível e quadro de distâncias · 1:600"><img src="img/prancha12.jpg" alt="Prancha 12: rota acessível no mezanino e quadro de distâncias" loading="lazy"></button><figcaption><span class="label">12/12</span>Rota acessível e distâncias</figcaption></figure>
+    </div>
+
+    <div class="two" style="margin-top:30px">
+      <div>
+        <h3 class="sub" style="margin-top:0">Quadro de níveis</h3>
+        <div class="levels">
+          <div><b>+7,00</b><span>Passarela e saguão do terminal</span></div>
+          <div><b>±0,00</b><span>Praça, Acessos A e B, terminal de ônibus</span></div>
+          <div><b>−9,00</b><span>Mezanino: bilheteria e bloqueios</span></div>
+          <div><b>−19,00</b><span>Plataforma Linha 20-Rosa (144 m)</span></div>
+          <div><b>−33,00</b><span>Plataforma Linha Âmbar (124 m)</span></div>
+        </div>
+      </div>
+      <figure>
+        <button type="button" data-full="img/cursino-fps.jpg" data-cap="Modelo 3D em primeira pessoa: escada rolante para o saguão da passarela"><img src="img/cursino-fps.jpg" alt="Vista em primeira pessoa da escada rolante no modelo 3D" style="--ar:16/9" loading="lazy"></button>
+        <figcaption><span class="label">3D</span>Percurso em primeira pessoa pelo modelo.</figcaption>
+      </figure>
+    </div>
+    <p class="team">Trabalho em grupo (6 integrantes): Adriana Amaral, Anderson Guilherme, Cauan Ferreira, Gabriel Rodrigues, Maria Elenira e Robes dos Santos.</p>
+  </div>
+  <aside>
+    <div class="no"><span class="label">Prancha</span><b>01</b></div>
+    <dl>
+      <div><dt>Disciplina</dt><dd>Operação de Transporte de Cargas e Passageiros (OTCP)</dd></div>
+      <div><dt>Professor</dt><dd>Prof. Me. José Marcelo Tonini Ximenez</dd></div>
+      <div><dt>Período</dt><dd>2026/2 · Fatec Tatuapé</dd></div>
+      <div><dt>Ferramentas</dt><dd>AutoCAD 2D, modelagem 3D, QGIS</dd></div>
+      <div><dt>Entregas</dt><dd>12 pranchas A1, modelo 3D navegável, vídeos de percurso</dd></div>
+    </dl>
+    <div class="links">
+      <a class="btn primary" href="https://estacao-cursino.vercel.app/">Abrir modelo 3D <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+</section>
+
+<!-- 02 LEVANTAMENTO -->
+<section class="sheet" id="levantamento">
+  <div class="main">
+    <div class="kicker"><i class="amb"></i><span class="label">Geoprocessamento · QGIS + GeoSampa</span></div>
+    <h2>Análise urbana do entorno do Cursino</h2>
+    <p class="lead">Levantamento de morfologia urbana, mobilidade e meio físico em um raio de 500 m da futura estação. Os mapas foram feitos no QGIS com dados do GeoSampa e serviram de base para a proposta de linha de metrô e para a intervenção urbana.</p>
+
+    <div class="grid g2" style="margin-top:24px">
+      <figure><button type="button" data-full="img/mapa-uso-solo.jpg" data-cap="Mapa 01 · Uso do solo · Fonte: GeoSampa – PMSP, 2026"><img src="img/mapa-uso-solo.jpg" alt="Mapa de uso do solo do Cursino" style="--ar:16/9" loading="lazy"></button><figcaption><span class="label">01</span>Uso do solo</figcaption></figure>
+      <figure><button type="button" data-full="img/mapa-mobilidade.jpg" data-cap="Mapa 08 · Síntese de mobilidade: pontos e faixas de ônibus, classificação viária, semáforos"><img src="img/mapa-mobilidade.jpg" alt="Mapa síntese de mobilidade com pontos de ônibus e classificação viária" style="--ar:16/9" loading="lazy"></button><figcaption><span class="label">08</span>Síntese de mobilidade</figcaption></figure>
+      <figure><button type="button" data-full="img/mapa-viario.jpg" data-cap="Mapa 06A · Sistema viário e semáforos · classificação CET e sentido de circulação"><img src="img/mapa-viario.jpg" alt="Mapa do sistema viário com sentido de circulação" style="--ar:16/9" loading="lazy"></button><figcaption><span class="label">06A</span>Sistema viário e semáforos</figcaption></figure>
+      <figure><button type="button" data-full="img/mapa-meio-fisico.jpg" data-cap="Mapa 12 · Síntese do meio físico: bacia, curvas de nível, infiltração, árvores e drenagem"><img src="img/mapa-meio-fisico.jpg" alt="Mapa síntese do meio físico com curvas de nível e potencial de infiltração" style="--ar:16/9" loading="lazy"></button><figcaption><span class="label">12</span>Síntese do meio físico</figcaption></figure>
+    </div>
+
+    <h3 class="sub">Da análise à proposta</h3>
+    <p class="note">Três traçados de metrô estudados; a Linha Âmbar foi escolhida e desenvolvida junto com uma proposta de intervenção urbana.</p>
+    <div class="grid g2">
+      <figure><button type="button" data-full="img/linha-ambar.jpg" data-cap="Proposta A · Linha Âmbar · Tatuapé ↔ Jabaquara · ~14 km · 11 estações · ~24 min"><img src="img/linha-ambar.jpg" alt="Mapa da proposta da Linha Âmbar entre Tatuapé e Jabaquara" style="--ar:4/5;--pos:center 30%" loading="lazy"></button><figcaption><span class="label">Linha</span>Linha Âmbar: ~14 km, 11 estações, ~24 min</figcaption></figure>
+      <figure><button type="button" data-full="img/proposta-urbana.jpg" data-cap="Proposta de intervenção urbana: praça, terminal, HIS, uso misto, ciclovia e corredor verde"><img src="img/proposta-urbana.jpg" alt="Mapa da proposta de intervenção urbana no entorno da Estação Cursino" style="--ar:4/5;--pos:center 30%" loading="lazy"></button><figcaption><span class="label">Urbano</span>Intervenção no entorno da estação</figcaption></figure>
+    </div>
+  </div>
+  <aside>
+    <div class="no"><span class="label">Prancha</span><b>02</b></div>
+    <dl>
+      <div><dt>Disciplina</dt><dd>OTCP 2026/2 · Fatec Tatuapé</dd></div>
+      <div><dt>Base de dados</dt><dd>GeoSampa – PMSP, 2026 · Google Satellite</dd></div>
+      <div><dt>Referência</dt><dd>SIRGAS 2000 / UTM 23S</dd></div>
+      <div><dt>Eixos</dt><dd>Morfologia urbana, mobilidade e meio físico</dd></div>
+      <div><dt>Também</dt><dd>Estudo de caso da Estação Tamanduateí</dd></div>
+      <div><dt>Ferramentas</dt><dd>QGIS, análise espacial</dd></div>
+    </dl>
+  </aside>
+</section>
+
+<!-- 03 DECIBEL -->
+<section class="sheet" id="decibel">
+  <div class="main">
+    <div class="kicker"><i></i><span class="label">Iniciação científica · em andamento</span></div>
+    <h2>Decibel Penha: poluição sonora na Subprefeitura da Penha</h2>
+    <p class="lead">Pesquisa que mede o ruído urbano com decibelímetro em 11 pontos georreferenciados, ao longo de 8 meses de coleta semanal. Os dados alimentam um indicador espacial de qualidade sonora construído no QGIS por análise multicritério, para apontar áreas críticas de exposição ao ruído.</p>
+    <figure style="margin-top:22px">
+      <button type="button" data-full="img/decibel.jpg" data-cap="Site do projeto Decibel Penha: painel de acompanhamento da coleta"><img src="img/decibel.jpg" alt="Tela do site Decibel Penha com painel de acompanhamento" style="--ar:2/1;--pos:top" loading="lazy"></button>
+      <figcaption><span class="label">Web</span>Site do projeto com painel, calendário de medições, diário de campo e manual ilustrado.</figcaption>
+    </figure>
+    <ul class="plain" style="margin-top:18px">
+      <li><strong>Caracterização da área:</strong> mapas de localização, densidade demográfica, uso do solo, zoneamento e sistema viário no QGIS.</li>
+      <li><strong>Método:</strong> 20 medições por ponto, comparadas aos limites de ruído de cada zona.</li>
+      <li><strong>Produto:</strong> indicador espacial de qualidade sonora para apoiar o planejamento urbano e o controle ambiental.</li>
+    </ul>
+  </div>
+  <aside>
+    <div class="no"><span class="label">Prancha</span><b>03</b></div>
+    <dl>
+      <div><dt>Orientador</dt><dd>Prof. Me. Thiago França Shoegima</dd></div>
+      <div><dt>Instituição</dt><dd>Fatec Tatuapé – Victor Civita</dd></div>
+      <div><dt>Área</dt><dd>Subprefeitura da Penha, Zona Leste de SP</dd></div>
+      <div><dt>Ferramentas</dt><dd>Decibelímetro, QGIS, GeoSampa, site próprio</dd></div>
+    </dl>
+    <div class="links">
+      <a class="btn primary" href="https://gabrielrodriguespaciullo-ship-it.github.io/Decibel-Penha-/">Abrir site do projeto <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+</section>
+
+<!-- 04 PO -->
+<section class="sheet" id="po">
+  <div class="main">
+    <div class="kicker"><i class="amb"></i><span class="label">Pesquisa Operacional · ferramentas próprias</span></div>
+    <h2>Solucionador de PO e simulador de filas</h2>
+    <p class="lead">Duas ferramentas web criadas para a disciplina de Pesquisa Operacional. O solucionador resolve problemas de transporte pelo método simplex e gera relatórios de resposta e sensibilidade como o Solver do Excel. O simulador calcula os modelos de filas M/M/1 e M/M/s com gráficos.</p>
+    <figure style="margin-top:22px">
+      <button type="button" data-full="img/po.jpg" data-cap="Solucionador de PO: problema clássico de transporte"><img src="img/po.jpg" alt="Tela do Solucionador de PO com quadro de fontes e destinos" style="--ar:2/1;--pos:top" loading="lazy"></button>
+      <figcaption><span class="label">Web</span>Cinco tipos de problema: clássico, transbordo, fluxo máximo, melhor rota e filas.</figcaption>
+    </figure>
+    <ul class="plain" style="margin-top:18px">
+      <li><strong>Simplex de duas fases</strong> calculado no navegador, com modelo pronto para copiar.</li>
+      <li><strong>Exportação para Excel</strong> com o Solver já configurado para os relatórios oficiais.</li>
+      <li><strong>Teoria das filas:</strong> recálculo automático e simulação de chegadas de Poisson e atendimento exponencial.</li>
+    </ul>
+  </div>
+  <aside>
+    <div class="no"><span class="label">Prancha</span><b>04</b></div>
+    <dl>
+      <div><dt>Disciplina</dt><dd>Pesquisa Operacional · Fatec Tatuapé</dd></div>
+      <div><dt>Conteúdo</dt><dd>Problemas de transporte e teoria das filas</dd></div>
+      <div><dt>Ferramentas</dt><dd>Programação web, Excel Solver</dd></div>
+    </dl>
+    <div class="links">
+      <a class="btn primary" href="https://gabrielrodriguespaciullo-ship-it.github.io/PO-ferramenta/">Solucionador de PO <span aria-hidden="true">↗</span></a>
+      <a class="btn" href="https://gabrielrodriguespaciullo-ship-it.github.io/Teoria-das-filas-/">Simulador de filas <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+</section>
+
+<!-- 05 OUTROS -->
+<div class="minor" id="outros">
+  <article>
+    <div class="kicker"><i></i><span class="label">Elementos de Vias · atividade de campo</span></div>
+    <h3>Análise da Av. Amador Bueno da Veiga</h3>
+    <p>Análise de campo do trecho entre os nº 1312 e 2484, na Penha: tráfego, cargas, patologias do pavimento e impactos. O pavimento foi classificado de regular a crítico.</p>
+    <p>Recomendações: estudo de cargas para o reforço estrutural, fresagem e recapeamento nos trechos degradados e melhoria da drenagem.</p>
+    <p class="meta">Prof. Felipe Rakauskas · Fatec Tatuapé · trabalho individual</p>
+  </article>
+  <article>
+    <div class="kicker"><i class="amb"></i><span class="label">Gestão de Projetos</span></div>
+    <h3>Terminal Solar: usina no Terminal Barra Funda</h3>
+    <p>Projeto de implantação de uma usina solar no Terminal Barra Funda, estruturado com escopo, Estrutura Analítica do Projeto (EAP) e cronograma.</p>
+    <p>Documentação em normas ABNT e planejamento de prazos no MS Project.</p>
+    <p class="meta">Fatec Tatuapé · trabalho em grupo</p>
+  </article>
+</div>
+
+<!-- 06 COMPETÊNCIAS -->
+<section class="skills" id="competencias">
+  <h2>Competências</h2>
+  <div class="skillgrid">
+    <div><span class="lvl">Avançado</span><h3>AutoCAD 2D</h3><p>Plantas, cortes, implantação cotada e pranchas com carimbo. 3D em nível intermediário.</p></div>
+    <div><span class="lvl">Avançado</span><h3>QGIS</h3><p>Mapas temáticos com bases públicas (GeoSampa), sínteses e análise multicritério.</p></div>
+    <div><span class="lvl">Avançado</span><h3>Pacote Office</h3><p>Excel (incluindo Solver), PowerPoint e Word para relatórios e apresentações.</p></div>
+    <div><span class="lvl">Aplicado</span><h3>Planejamento</h3><p>MS Project, EAP e cronogramas; Pesquisa Operacional e teoria das filas.</p></div>
+    <div><span class="lvl">Aplicado</span><h3>Inteligência Artificial</h3><p>IA generativa para pesquisa, análise de dados, documentos e automação de tarefas.</p></div>
+    <div><span class="lvl">Aplicado</span><h3>Comunicação visual</h3><p>Canva e sites próprios para apresentar dados e projetos.</p></div>
+  </div>
+  <p style="margin:18px 0 0;font-size:14.5px;color:var(--muted)">Formação: Tecnologia em Transporte Terrestre, Fatec Tatuapé (2025–2027, em curso) · Sociologia e Política, FESPSP (2023–2024, trancado).</p>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>Vamos conversar</h2>
+      <p>Aberto a oportunidades de emprego em transportes e logística, planejamento da mobilidade urbana, geoprocessamento e análise de dados operacionais e de desempenho.</p>
+    </div>
+    <div class="c">
+      <div><a href="mailto:gabrielrodriguespaciullo@gmail.com">gabrielrodriguespaciullo@gmail.com</a></div>
+      <div>+55 (11) 95540-7562</div>
+      <div><a href="https://www.linkedin.com/in/gabriel-rodrigues-paciullo-462664302">LinkedIn</a></div>
+    </div>
+  </div>
+</footer>
+
+<dialog class="viewer" id="viewer" aria-label="Imagem ampliada">
+  <div class="bar"><span id="vcap"></span><button type="button" id="vclose">Fechar</button></div>
+  <img id="vimg" alt="">
+</dialog>
+
+<script>
+(function(){
+  var d=document.getElementById('viewer'),im=document.getElementById('vimg'),cap=document.getElementById('vcap');
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click',function(){
+      im.src=b.getAttribute('data-full');
+      var t=b.getAttribute('data-cap')||'';cap.textContent=t;im.alt=t;
+      try{d.showModal();}catch(e){window.location.href=b.getAttribute('data-full');}
+    });
+  });
+  document.getElementById('vclose').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+})();
+</script>
+</body>
+</html>
